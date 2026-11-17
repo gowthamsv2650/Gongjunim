@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Always With You ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(145deg, #250b20, #641d3d, #a3445d);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 55px 22px;
+  max-width: 500px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 34px;
+  margin: 20px 0;
+  color: #ffe1e9;
+}
+
+.heart {
+  font-size: 75px;
+  animation: beat 1s infinite;
+  margin: 20px;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+.card {
+  background: rgba(255,255,255,0.12);
+  padding: 25px;
+  border-radius: 22px;
+  margin: 25px 0;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+button {
+  background: #ffb6c9;
+  color: #5c1834;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 24px;
+  margin: 9px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+#message {
+  font-size: 19px;
+  color: #ffe2eb;
+  min-height: 65px;
+  margin-top: 20px;
+}
+
+.petal {
+  position: fixed;
+  top: -30px;
+  animation: fall 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: .8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="heart">❤️</div>
+
+  <h1>Hey, My Love!</h1>
+
+  <p>
+    I know you're missing me right now...
+    But close your eyes for a moment.
+    Imagine I'm sitting right beside you,
+    holding your hand and looking into your eyes.
+  </p>
+
+  <div class="card">
+    <h2>One little reminder 💗</h2>
+    <p>
+      Distance may keep our bodies apart,
+      but nothing can keep my heart away from you.
+      Wherever you are, a part of me is always with you.
+    </p>
+  </div>
+
+  <h2>What do you need right now? 🥺</h2>
+
+  <button onclick="hug()">🫂 Virtual Hug</button>
+
+  <button onclick="kiss()">💋 Send a Kiss</button>
+
+  <button onclick="love()">❤️ Feel My Love</button>
+
+  <div id="message">
+    Choose one, sweetheart... 💕
+  </div>
+
+  <div class="card">
+    <h2>A promise to you 🌙</h2>
+    <p>
+      If I could teleport anywhere right now,
+      I wouldn't choose a beautiful place.
+      I would choose the place where you are.
+      Because you're my favourite place in this world.
+    </p>
+  </div>
+
+  <h2>I'm just one heartbeat away. ❤️</h2>
+
+  <footer>
+    Made with endless love, just for you. <br>
+    Forever yours ❤️
+  </footer>
+
+</div>
+
+<script>
+function hug() {
+  document.getElementById("message").innerHTML =
+  "Close your eyes, baby... 🫂 Imagine my arms around you. I'm holding you tight and I'm not letting go!";
+}
+
+function kiss() {
+  document.getElementById("message").innerHTML =
+  "Muaaahhh! 💋 One kiss on your forehead, one on your cheek, and a thousand more waiting for you!";
+}
+
+function love() {
+  document.getElementById("message").innerHTML =
+  "If my heart could speak, it would call your name every second. I LOVE YOU, MY GIRL! ❤️";
+}
+
+// Floating hearts
+setInterval(() => {
+  const petal = document.createElement("div");
+  petal.className = "petal";
+  petal.innerHTML = ["❤️","💕","🌹","💗"][Math.floor(Math.random()*4)];
+  petal.style.left = Math.random()*100 + "vw";
+  petal.style.fontSize = (15 + Math.random()*20) + "px";
+  document.body.appendChild(petal);
+  setTimeout(() => petal.remove(), 7000);
+}, 500);
+</script>
+
+</body>
+</html>
